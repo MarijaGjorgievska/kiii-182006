@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  mydb:
+    image: mysql:8.0
+    container_name: kiii-db
+    environment:
+      DATABASE_PORT: 3306
+      MYSQL_ROOT_PASSWORD: m2521*
+      MYSQL_DATABASE: books
+      MYSQL_USER: user
+      MYSQL_PASSWORD: m2521*
+    ports:
+      - 3307:3306
+    volumes:
+      - project_data:/var/lib/mysql
+  app:
+    image: kiii-comp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kiii-project
+    ports:
+      - 8080:8080
+    depends_on:
+      - mydb
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mydb:3306/books?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: m2521*
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+volumes:
+  project_data: {}
