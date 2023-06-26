@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.kiii182006.Kiii182006ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.549 s - in com.example.kiii182006.Kiii182006ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.781 s - in com.example.kiii182006.Kiii182006ApplicationTests
